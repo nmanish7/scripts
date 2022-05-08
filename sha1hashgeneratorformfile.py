@@ -18,7 +18,7 @@ def file_next_line(filename: str, encoding: str):
     with open(file=filename, encoding=encoding) as file:
 
         for inner_line in file:
-            yield bytes(inner_line, encoding)
+            yield bytes(inner_line.replace("\n", ""), encoding)
 
 
 file_object = file_next_line(FILENAME, ENCODING)
